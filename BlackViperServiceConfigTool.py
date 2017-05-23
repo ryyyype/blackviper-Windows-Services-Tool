@@ -3,8 +3,22 @@
 #
 ######################################################################################
 import os
-from bs4 import BeautifulSoup
 import urllib2
+
+def install_modul(package):
+    import pip
+    import imp
+    try:
+        imp.find_module(package)
+    except ImportError:
+        pip.main(['install', package])
+
+install_modul('beautifulsoup4')
+install_modul('lxml')
+
+from bs4 import BeautifulSoup
+
+os.system('clear')
 
 def WinXP_SP3_x86():
     url = "http://www.blackviper.com/service-configurations/black-vipers-windows-xp-x86-32-bit-service-pack-3-service-configurations"
@@ -199,7 +213,7 @@ print "##################################################"
 print "#                                                #"
 print "#  Black Viper's Windows Service Configurations  #"
 print "#                                                #"
-print "#                 v0.2 by rype                   #"
+print "#                 v0.3 by rype                   #"
 print "##################################################\n"
 
 menu = [
